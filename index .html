@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uverra Gems | Exquisite Jewelry Exporter</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern Luxury Theme */
+        :root {
+            --bg-color: #faf9f6; 
+            --text-main: #2c2c2c; 
+            --gold-accent: #c5a059; 
+            --gray-light: #f0f0f0;
+            --text-light: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Transparent to Solid Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--text-main);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--gold-accent);
+            font-style: italic;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-left: 35px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(250, 249, 246, 0.8), rgba(250, 249, 246, 0.9)), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2000&auto=format&fit=crop') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            color: var(--text-main);
+            max-width: 800px;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            padding: 15px 40px;
+            background-color: var(--text-main);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            transition: background 0.4s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-accent);
+        }
+
+        /* Info Banner */
+        .info-banner {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            padding: 60px 20px;
+            background: #fff;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item h4 {
+            font-size: 1.5rem;
+            color: var(--gold-accent);
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        /* Collections Section */
+        .section-padding {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            margin-bottom: 60px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .collection-card {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            background-color: var(--gray-light);
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: #fff;
+        }
+
+        .collection-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .collection-overlay p {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #ddd;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            background-color: #fff;
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-text p {
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .team-member {
+            border-left: 2px solid var(--gold-accent);
+            padding-left: 20px;
+        }
+
+        .team-member h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .team-member span {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .contact-links a {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .contact-links i {
+            width: 25px;
+            color: var(--gold-accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: var(--text-main);
+            color: #fff;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .info-banner { flex-direction: column; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Uverra <span>Gems</span></div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#collections">Collections</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-subtitle">Crafted in India • Exported Worldwide</div>
+        <h1>Elegance Forged in Silver & Gold</h1>
+        <p class="hero-text">We are a premier manufacturer and exporter of 925 Sterling Silver, 18K, and 22K Gold jewelry, delivering unparalleled craftsmanship to global B2B clients.</p>
+        <a href="https://wa.me/919456095758?text=Hello%20Uverra%20Gems,%20I%20am%20interested%20in%20your%20jewelry%20export%20catalog." target="_blank" class="btn-primary">Request Wholesale Catalog</a>
+    </section>
+
+    <div class="info-banner">
+        <div class="info-item">
+            <h4>925</h4>
+            <p>Sterling Silver</p>
+        </div>
+        <div class="info-item">
+            <h4>18K / 22K</h4>
+            <p>Premium Gold</p>
+        </div>
+        <div class="info-item">
+            <h4>Global</h4>
+            <p>Worldwide Export</p>
+        </div>
+    </div>
+
+    <!-- Expanded Collections Gallery -->
+    <section id="collections" class="section-padding">
+        <h2 class="section-title">Our Signature Collections</h2>
+        <p class="section-subtitle">Discover handcrafted perfection designed for the modern world.</p>
+        
+        <div class="grid-container">
+            <!-- 1. Rings -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b2548e?q=80&w=800&auto=format&fit=crop" alt="Rings">
+                <div class="collection-overlay">
+                    <h3>Rings</h3>
+                    <p>Bespoke & Classic Designs</p>
+                </div>
+            </div>
+
+            <!-- 2. Necklaces -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1599643478514-4a4e0f1523bb?q=80&w=800&auto=format&fit=crop" alt="Necklaces">
+                <div class="collection-overlay">
+                    <h3>Necklaces</h3>
+                    <p>Artisan Crafted Elegance</p>
+                </div>
+            </div>
+
+            <!-- 3. Earrings -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop" alt="Earrings">
+                <div class="collection-overlay">
+                    <h3>Earrings</h3>
+                    <p>Contemporary & Traditional</p>
+                </div>
+            </div>
+
+            <!-- 4. Bracelets -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop" alt="Bracelets">
+                <div class="collection-overlay">
+                    <h3>Bracelets</h3>
+                    <p>Delicate & Statement Pieces</p>
+                </div>
+            </div>
+
+            <!-- 5. Pendants -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=800&auto=format&fit=crop" alt="Pendants">
+                <div class="collection-overlay">
+                    <h3>Pendants</h3>
+                    <p>Intricate Detailing</p>
+                </div>
+            </div>
+
+            <!-- 6. Bangles -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=800&auto=format&fit=crop" alt="Bangles">
+                <div class="collection-overlay">
+                    <h3>Bangles</h3>
+                    <p>Timeless Craftsmanship</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Contact Section -->
+    <section id="contact" class="contact-wrapper">
+        <div class="contact-text">
+            <h2>Partner With Us</h2>
+            <p>Whether you are looking to source high-quality jewelry for your boutique or need a reliable manufacturing partner for custom designs, we are here to deliver excellence across the globe.</p>
+            
+            <div style="margin-top: 30px;">
+                <p><i class="fa-solid fa-location-dot" style="color: var(--gold-accent); margin-right: 10px;"></i> Moradabad, Uttar Pradesh, India</p>
+                <p style="margin-top: 10px;"><i class="fa-brands fa-instagram" style="color: var(--gold-accent); margin-right: 10px;"></i> <a href="https://instagram.com/uverra_gems" target="_blank">@uverra_gems</a></p>
+            </div>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <h4>Uday Verma</h4>
+                <span>Founder</span>
+                <div class="contact-links">
+                    <a href="https://wa.me/919456095758" target="_blank"><i class="fa-brands fa-whatsapp"></i> +91 9456095758</a>
+                    <a href="mailto:uverragems@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <h4>Megha Verma</h4>
+                <span>Senior Merchandiser</span>
+                <div class="contact-links">
+                    <a href="https://wa.me/919528296731" target="_blank"><i class="fa-brands fa-whatsapp"></i> +91 9528296731</a>
+                    <a href="mailto:uverragems@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Uverra Gems. Setting the global standard for fine jewelry manufacturing.</p>
+    </footer>
+
+</body>
+</html>
