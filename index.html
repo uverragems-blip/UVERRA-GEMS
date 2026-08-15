@@ -127,7 +127,7 @@ footer{background:#12110f;color:#aaa39b;padding:45px 0 20px} .footgrid{display:g
 
 <a class="wa" href="https://wa.me/919528296731?text=Hello%20Uverra%20Gems%2C%20I%20am%20interested%20in%20your%20B2B%20jewellery%20catalogue." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-<div class="modal" id="modal"><div class="modalbox"><button class="close" id="close">&times;</button><div class="detail"><div><img id="detailImg" alt=""><div style="margin-top:10px"><a id="waProduct" class="btn btn-gold" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp</a></div></div><div><div class="eyebrow" id="detailCat"></div><h2 id="detailName"></h2><div class="code" id="detailCode"></div><p style="margin-top:12px">Reference from the Uverra Gems catalogue. Exact specifications, availability, pricing and MOQ are confirmed according to the buyer's requirement.</p><div class="detail-list"><div><strong>Category:</strong> <span id="detailCategory"></span></div><div><strong>Material:</strong> <span id="detailMaterial"></span></div><div><strong>MOQ:</strong> On enquiry</div><div><strong>Customization:</strong> Discuss with buyer</div></div><a href="#contact" class="btn btn-dark" id="modalContact">Send Buyer Inquiry</a></div></div></div></div>
+<div class="modal" id="modal"><div class="modalbox"><button type="button" class="close" id="close" aria-label="Close product details">&times;</button><div class="detail"><div><img id="detailImg" alt=""><div style="margin-top:10px"><a id="waProduct" class="btn btn-gold" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp</a></div></div><div><div class="eyebrow" id="detailCat"></div><h2 id="detailName"></h2><div class="code" id="detailCode"></div><p style="margin-top:12px">Reference from the Uverra Gems catalogue. Exact specifications, availability, pricing and MOQ are confirmed according to the buyer's requirement.</p><div class="detail-list"><div><strong>Category:</strong> <span id="detailCategory"></span></div><div><strong>Material:</strong> <span id="detailMaterial"></span></div><div><strong>MOQ:</strong> On enquiry</div><div><strong>Customization:</strong> Discuss with buyer</div></div><a href="#contact" class="btn btn-dark" id="modalContact">Send Buyer Inquiry</a></div></div></div></div>
 <div class="toast" id="toast">Your enquiry email has been prepared.</div>
 
 <script>
@@ -265,6 +265,12 @@ ${d.get("name")}`;
   const t=document.getElementById("toast");t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3500);
 });
 document.getElementById("modalContact").addEventListener("click",()=>{document.getElementById("modal").classList.remove("open");document.body.classList.remove("lock")});
+const productModal=document.getElementById("modal");
+const productClose=document.getElementById("close");
+function closeProductModal(){ if(productModal){ productModal.classList.remove("open"); document.body.classList.remove("lock"); } }
+if(productClose) productClose.addEventListener("click", closeProductModal);
+if(productModal) productModal.addEventListener("click", function(e){ if(e.target===productModal) closeProductModal(); });
+document.addEventListener("keydown", function(e){ if(e.key==="Escape" && productModal && productModal.classList.contains("open")) closeProductModal(); });
 render();
 </script>
 </body>
