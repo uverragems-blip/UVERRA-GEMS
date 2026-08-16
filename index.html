@@ -1,277 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Uverra Gems — B2B jewellery sourcing and export from Moradabad, India. Browse 925 Sterling Silver, Gold, Rings, Earrings, Necklaces, Pendants, Bracelets and Bangles.">
-<meta name="theme-color" content="#171513">
-<title>Uverra Gems | B2B Jewellery Catalogue</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root{--ink:#191715;--gold:#b28a4a;--gold2:#8c692f;--cream:#f8f5ef;--white:#fff;--muted:#706a63;--line:#e7dfd3;--soft:#f0e9df;--max:1200px}
-*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:"DM Sans",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6} body.lock{overflow:hidden}
-a{text-decoration:none;color:inherit} button,input,select{font:inherit} button{cursor:pointer} img{display:block;max-width:100%}
-.container{width:min(var(--max),92%);margin:auto} h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;line-height:1.15}
-.eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:3px;color:var(--gold2);font-weight:700}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;border-radius:999px;padding:13px 20px;font-size:.78rem;font-weight:700;transition:.25s}
-.btn-dark{background:var(--ink);color:#fff} .btn-dark:hover{background:var(--gold2);transform:translateY(-2px)}
-.btn-gold{background:var(--gold);color:#fff} .btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
-.btn-outline{border-color:var(--ink)} .btn-outline:hover{background:var(--ink);color:#fff}
-.topbar{background:var(--ink);color:#fff;font-size:.7rem} .topbar .container{min-height:35px;display:flex;justify-content:space-between;align-items:center;gap:12px} .topbar a{color:#e9c982}
-nav{position:sticky;top:0;z-index:1000;background:rgba(248,245,239,.96);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
-.nav{height:75px;display:flex;align-items:center;justify-content:space-between;gap:20px} .logo{font:1.85rem "Playfair Display";letter-spacing:.5px} .logo span{color:var(--gold);font-style:italic}
-.links{display:flex;gap:24px;align-items:center} .links a{font-size:.72rem;text-transform:uppercase;letter-spacing:1.1px;font-weight:700;color:#514b44} .links a:hover{color:var(--gold2)}
-.menu{display:none;border:0;background:none;font-size:1.3rem}
-.hero{background:#eae2d6;padding:85px 0 75px} .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
-.hero h1{font-size:clamp(3rem,6vw,5.4rem);margin:14px 0 22px} .hero h1 em{font-style:normal;color:var(--gold)}
-.hero p{max-width:610px;color:var(--muted);font-size:1rem} .hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-.hero-image{height:560px;border-radius:24px;background:url("assets/products/Gold/Earrings/gold_070.jpg") center/cover;box-shadow:0 25px 60px rgba(31,24,17,.14);position:relative}
-.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.4),transparent 50%);border-radius:24px}
-.badge{position:absolute;z-index:2;bottom:24px;left:24px;background:#fff;padding:15px 18px;border-left:3px solid var(--gold)} .badge strong{font:1.2rem "Playfair Display";display:block} .badge span{font-size:.7rem;color:var(--muted)}
-.stats{background:#fff;border-bottom:1px solid var(--line)} .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)} .stat{padding:27px 10px;text-align:center;border-right:1px solid var(--line)} .stat:last-child{border:0} .stat strong{font:1.65rem "Playfair Display";color:var(--gold2);display:block} .stat span{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
-.section{padding:90px 0} .head{text-align:center;max-width:730px;margin:0 auto 42px} .head h2{font-size:clamp(2.1rem,4vw,3.3rem);margin:10px 0 14px} .head p{color:var(--muted)}
-.market-edit{background:#fff} .market-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px} .market{padding:23px;border:1px solid var(--line);border-radius:15px;background:var(--cream)} .market h3{font-size:1.3rem;margin:8px 0} .market p{font-size:.76rem;color:var(--muted)} .market span{font-size:.66rem;text-transform:uppercase;letter-spacing:1px;color:var(--gold2);font-weight:700}
-.catalogue{background:var(--cream)} .toolbar{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:25px} .filters{display:flex;gap:8px;flex-wrap:wrap} .filter{border:1px solid var(--line);background:#fff;padding:9px 13px;border-radius:999px;font-size:.7rem;font-weight:700} .filter.active,.filter:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.search{width:260px;border:1px solid var(--line);background:#fff;padding:11px 14px;border-radius:999px;outline:none;font-size:.75rem} .search:focus{border-color:var(--gold)}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px} .card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;transition:.25s} .card:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(30,23,16,.1)} .card-img{height:285px;background:#eee;overflow:hidden;position:relative} .card-img img{width:100%;height:100%;object-fit:cover;transition:.4s} .card:hover .card-img img{transform:scale(1.04)} .tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.92);padding:5px 8px;border-radius:999px;font-size:.58rem;font-weight:700;color:var(--gold2)}
-.card-body{padding:15px} .card-body h3{font-family:"DM Sans";font-size:.9rem;font-weight:700} .meta{font-size:.68rem;color:var(--muted);margin:5px 0 12px} .card-actions{display:flex;gap:7px} .smallbtn{flex:1;border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 7px;font-size:.65rem;font-weight:700} .smallbtn.dark{background:var(--ink);border-color:var(--ink);color:#fff}
-.empty{grid-column:1/-1;text-align:center;padding:60px;color:var(--muted);display:none}
-.trend{background:var(--ink);color:#fff} .trend .head p{color:#b9b1a8} .trend-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px} .trend-card{border:1px solid rgba(255,255,255,.12);border-radius:15px;overflow:hidden;background:rgba(255,255,255,.04)} .trend-card img{width:100%;height:270px;object-fit:cover} .trend-card div{padding:17px} .trend-card h3{font-size:1.2rem} .trend-card p{font-size:.7rem;color:#b9b1a8;margin-top:5px}
-.b2b{background:#e9e1d5} .b2b-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center} .b2b h2{font-size:3rem;margin:10px 0 17px} .b2b p{color:var(--muted)} .features{display:grid;grid-template-columns:1fr 1fr;gap:12px} .feature{background:#fff;border:1px solid var(--line);border-radius:14px;padding:21px} .feature i{color:var(--gold);font-size:1.2rem} .feature h3{font-family:"DM Sans";font-size:.9rem;margin:10px 0 5px} .feature p{font-size:.72rem}
-.contact{background:#fff} .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px} .contact h2{font-size:3rem;margin:10px 0 15px} .contact-copy p{color:var(--muted)} .info{display:flex;gap:12px;margin:19px 0} .info i{width:34px;height:34px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--gold2)} .info strong{display:block;font-size:.8rem} .info a,.info span{font-size:.76rem;color:var(--muted)}
-.form{background:var(--cream);padding:28px;border-radius:18px} .form h3{font-size:1.7rem;margin-bottom:17px} .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px} input,select,textarea{width:100%;border:1px solid #ddd4c8;background:#fff;padding:12px;border-radius:9px;outline:none} textarea{min-height:100px;resize:vertical} .full{grid-column:1/-1} .note{font-size:.65rem;color:var(--muted);margin-top:8px}
-footer{background:#12110f;color:#aaa39b;padding:45px 0 20px} .footgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:45px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)} footer .logo{color:#fff;display:inline-block;margin-bottom:10px} footer p,footer a{font-size:.73rem} footer h4{font-family:"DM Sans";font-size:.72rem;text-transform:uppercase;letter-spacing:1.4px;color:#fff;margin-bottom:13px} footer a{display:block;margin:7px 0} footer a:hover{color:#e3c27e} .copy{text-align:center;padding-top:18px;font-size:.65rem}
-.wa{position:fixed;right:20px;bottom:20px;width:54px;height:54px;border-radius:50%;background:#1da463;color:#fff;display:grid;place-items:center;font-size:1.4rem;z-index:1100;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-.modal{position:fixed;inset:0;background:rgba(10,8,6,.72);z-index:2000;display:none;align-items:center;justify-content:center;padding:18px} .modal.open{display:flex} .modalbox{background:#fff;width:min(850px,100%);max-height:92vh;overflow:auto;border-radius:20px;position:relative;padding:25px} .close{position:absolute;right:15px;top:12px;border:0;background:none;font-size:1.6rem;color:#555} .detail{display:grid;grid-template-columns:1fr 1fr;gap:25px} .detail img{width:100%;height:460px;object-fit:cover;border-radius:13px;background:#eee} .detail h2{font-size:2.3rem;margin:9px 0} .detail p{color:var(--muted);font-size:.8rem} .detail .code{color:var(--gold2);font-size:.68rem;font-weight:700;letter-spacing:1px} .detail-list{margin:18px 0;display:grid;gap:8px} .detail-list div{padding:10px;background:var(--soft);border-radius:8px;font-size:.72rem}
-.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 17px;border-radius:9px;font-size:.72rem;opacity:0;pointer-events:none;transition:.3s;z-index:3000} .toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:1000px){.links{display:none;position:absolute;left:0;right:0;top:75px;background:var(--cream);padding:18px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start} .links.open{display:flex} .menu{display:block} .hero-grid,.b2b-grid,.contact-grid{grid-template-columns:1fr} .hero-image{height:480px} .grid{grid-template-columns:repeat(3,1fr)} .trend-grid{grid-template-columns:repeat(2,1fr)} .market-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:680px){.topbar .right{display:none} .nav{height:68px} .links{top:68px} .hero{padding:55px 0} .hero h1{font-size:3.1rem} .hero-image{height:410px} .stats-grid{grid-template-columns:1fr 1fr} .stat{padding:20px 8px} .grid{grid-template-columns:repeat(2,1fr);gap:12px} .card-img{height:220px} .search{width:100%} .toolbar{align-items:stretch} .filters{width:100%} .detail{grid-template-columns:1fr} .detail img{height:340px} .features,.formgrid{grid-template-columns:1fr} .full{grid-column:auto} .footgrid{grid-template-columns:1fr} .section{padding:70px 0}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uverra Gems | Exquisite Jewelry Exporter</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern Luxury Theme */
+        :root {
+            --bg-color: #faf9f6; 
+            --text-main: #2c2c2c; 
+            --gold-accent: #c5a059; 
+            --gray-light: #f0f0f0;
+            --text-light: #666666;
+        }
 
-.catalog-controls{display:grid;gap:14px;margin-bottom:28px;background:#fff;border:1px solid var(--line);padding:18px;border-radius:16px}
-.filter-line{display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap}
-.filter-line>strong{font-size:.72rem;text-transform:uppercase;letter-spacing:1.2px;min-width:80px;padding-top:10px;color:var(--gold-dark)}
-.catalog-controls .filters{display:flex;gap:8px;flex-wrap:wrap}
-.catalog-controls .filter{border:1px solid var(--line);background:#fff;padding:9px 13px;border-radius:999px;font-size:.7rem;font-weight:700}
-.catalog-controls .filter.active,.catalog-controls .filter:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.catalog-note{font-size:.72rem;color:var(--muted);margin-top:-10px;margin-bottom:18px}
-</style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Transparent to Solid Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--text-main);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--gold-accent);
+            font-style: italic;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-left: 35px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 1.35rem;
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1101;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 16px 5%; }
+            .menu-toggle { display: block; }
+            .nav-links {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                right: 5%;
+                left: 5%;
+                flex-direction: column;
+                background: rgba(250,249,246,.98);
+                border: 1px solid rgba(0,0,0,.08);
+                box-shadow: 0 12px 30px rgba(0,0,0,.12);
+                border-radius: 12px;
+                padding: 8px 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            }
+            .nav-links.open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            .nav-links a {
+                display: block;
+                margin: 0;
+                padding: 14px 18px;
+                font-size: .78rem;
+            }
+            .nav-links a + a { border-top: 1px solid rgba(0,0,0,.06); }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(250, 249, 246, 0.8), rgba(250, 249, 246, 0.9)), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2000&auto=format&fit=crop') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            color: var(--text-main);
+            max-width: 800px;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            padding: 15px 40px;
+            background-color: var(--text-main);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            transition: background 0.4s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-accent);
+        }
+
+        /* Info Banner */
+        .info-banner {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            padding: 60px 20px;
+            background: #fff;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item h4 {
+            font-size: 1.5rem;
+            color: var(--gold-accent);
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        /* Collections Section */
+        .section-padding {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            margin-bottom: 60px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .collection-card {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            background-color: var(--gray-light);
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: #fff;
+        }
+
+        .collection-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .collection-overlay p {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #ddd;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            background-color: #fff;
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-text p {
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .team-member {
+            border-left: 2px solid var(--gold-accent);
+            padding-left: 20px;
+        }
+
+        .team-member h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .team-member span {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .contact-links a {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .contact-links i {
+            width: 25px;
+            color: var(--gold-accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: var(--text-main);
+            color: #fff;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .info-banner { flex-direction: column; gap: 30px; }
+        }
+    </style>
 </head>
 <body>
-<div class="topbar"><div class="container"><span>Uverra Gems · Moradabad, India · B2B Jewellery Sourcing & Export</span><span class="right">WhatsApp: <a href="https://wa.me/919528296731" target="_blank" rel="noopener">+91 9528296731</a></span></div></div>
 
-<nav><div class="container nav">
-<a href="#home" class="logo">Uverra <span>Gems</span></a>
-<div class="links" id="links"><a href="#home">Home</a><a href="#market">Market Edit</a><a href="#catalogue">Catalogue</a><a href="#wholesale">Wholesale</a><a href="#contact">Contact</a></div>
-<div><a class="btn btn-dark" href="#contact">Buyer Inquiry</a><button class="menu" id="menu" aria-label="Menu"><i class="fa-solid fa-bars"></i></button></div>
-</div></nav>
+    <nav>
+        <div class="logo">Uverra <span>Gems</span></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="nav-links" id="mobileNav">
+            <a href="#home">Home</a>
+            <a href="#collections">Jewellery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-<section class="hero" id="home"><div class="container hero-grid">
-<div><div class="eyebrow">Crafted in India · Selected for Global Buyers</div><h1>Your next jewellery collection starts <em>here.</em></h1>
-<p>Explore the Uverra Gems B2B catalogue with 145+ jewellery references across silver, gold, rings, earrings, necklaces, pendants, bracelets and bangles. We support wholesale, custom sourcing and private-label requirements.</p>
-<div class="hero-buttons"><a class="btn btn-dark" href="#catalogue">Browse Catalogue</a><a class="btn btn-outline" href="#contact">Request Wholesale Support</a></div>
-</div>
-<div class="hero-image"><div class="badge"><strong>925 · Gold · Custom</strong><span>India-based B2B jewellery sourcing</span></div></div>
-</div></section>
+    <section id="home" class="hero">
+        <div class="hero-subtitle">Crafted in India • Exported Worldwide</div>
+        <h1>Elegance Forged in Silver & Gold</h1>
+        <p class="hero-text">We are a premier manufacturer and exporter of 925 Sterling Silver, 18K, and 22K Gold jewelry, delivering unparalleled craftsmanship to global B2B clients.</p>
+        <a href="https://wa.me/919456095758?text=Hello%20Uverra%20Gems,%20I%20am%20interested%20in%20your%20jewelry%20export%20catalog." target="_blank" class="btn-primary">Request Wholesale Catalog</a>
+    </section>
 
-<section class="stats"><div class="container stats-grid"><div class="stat"><strong>145+</strong><span>Catalogue References</span></div><div class="stat"><strong>925</strong><span>Sterling Silver</span></div><div class="stat"><strong>18K / 22K</strong><span>Gold Jewellery</span></div><div class="stat"><strong>B2B</strong><span>Wholesale & Custom</span></div></div></section>
-
-<section class="section market-edit" id="market"><div class="container">
-<div class="head"><div class="eyebrow">International Market Edit</div><h2>Styles worth testing with global buyers</h2><p>Our edit combines your uploaded designs with current 2026 style signals. These are trend directions, not guarantees of sales.</p></div>
-<div class="market-grid">
-<div class="market"><span>USA</span><h3>Bold + wearable</h3><p>Statement rings, sculptural silver, hoops and distinctive everyday pieces.</p></div>
-<div class="market"><span>UK / Europe</span><h3>Sculptural + layered</h3><p>Statement pieces, layered necklaces, organic curves and vintage-inspired forms.</p></div>
-<div class="market"><span>Canada</span><h3>Silver + mixed metal</h3><p>Substantial sterling silver, textured links, cuffs and mixed-metal styling.</p></div>
-<div class="market"><span>Australia</span><h3>Organic + expressive</h3><p>Textured metal, nature-inspired shapes, bold forms and personal designs.</p></div>
-</div></div></section>
-
-<section class="section catalogue" id="catalogue"><div class="container">
-<div class="head"><div class="eyebrow">Uverra Gems Catalogue</div><h2>Browse by Material & Category</h2><p>Choose Silver or Gold first, then select Rings, Earrings, Necklaces, Pendants, Bracelets, Bangles or Sets. Click any product to see details and send an enquiry.</p></div><div class="catalog-note">Note: uploaded references are organised visually. Exact metal purity, karat, stones, weight, availability and MOQ should be confirmed before publication as product specifications.</div>
-<div class="catalog-controls">
-  <div class="filter-line">
-    <strong>Material</strong>
-    <div class="filters" id="materialFilters">
-      <button class="filter active" data-material="All">All Jewellery</button>
-      <button class="filter" data-material="Silver">Silver</button>
-      <button class="filter" data-material="Gold">Gold</button>
-      <button class="filter" data-material="Mixed / Fashion">Mixed / Fashion</button>
+    <div class="info-banner">
+        <div class="info-item">
+            <h4>925</h4>
+            <p>Sterling Silver</p>
+        </div>
+        <div class="info-item">
+            <h4>18K / 22K</h4>
+            <p>Premium Gold</p>
+        </div>
+        <div class="info-item">
+            <h4>Global</h4>
+            <p>Worldwide Export</p>
+        </div>
     </div>
-  </div>
-  <div class="filter-line">
-    <strong>Category</strong>
-    <div class="filters" id="categoryFilters"></div>
-  </div>
-  <input class="search" id="search" placeholder="Search by product code, category or jewellery type...">
-</div>
-<div class="grid" id="grid"></div><div class="empty" id="empty">No products match your search.</div>
-</div></section>
 
-<section class="section trend"><div class="container"><div class="head"><div class="eyebrow" style="color:#d7b777">Trend-inspired edit</div><h2>Selected styles for your next outreach</h2><p>These references are selected from your uploaded files to represent sculptural, organic, bold and wearable directions that are showing current market momentum.</p></div>
-<div class="trend-grid" id="trendGrid"></div></div></section>
+    <!-- Expanded Collections Gallery -->
+    <section id="collections" class="section-padding">
+        <h2 class="section-title">Our Signature Collections</h2>
+        <p class="section-subtitle">Discover handcrafted perfection designed for the modern world.</p>
+        
+        <div class="grid-container">
+            <!-- 1. Rings -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b2548e?q=80&w=800&auto=format&fit=crop" alt="Rings">
+                <div class="collection-overlay">
+                    <h3>Rings</h3>
+                    <p>Bespoke & Classic Designs</p>
+                </div>
+            </div>
 
-<section class="section b2b" id="wholesale"><div class="container b2b-grid"><div><div class="eyebrow">For Buyers</div><h2>A sourcing partner for your collection.</h2><p>Tell us your target category, material, quantity or design references. We can discuss suitable sourcing, custom requirements and private-label opportunities.</p><div style="margin-top:25px"><a class="btn btn-gold" href="#contact">Start Buyer Conversation</a></div></div>
-<div class="features"><div class="feature"><i class="fa-solid fa-boxes-stacked"></i><h3>Wholesale Supply</h3><p>For boutiques, retailers and online jewellery businesses.</p></div><div class="feature"><i class="fa-solid fa-pen-ruler"></i><h3>Custom Sourcing</h3><p>Share reference designs and specifications.</p></div><div class="feature"><i class="fa-solid fa-tags"></i><h3>Private Label</h3><p>Discuss branding and collection requirements.</p></div><div class="feature"><i class="fa-solid fa-globe"></i><h3>Export Support</h3><p>India-based coordination for international B2B orders.</p></div></div></div></section>
+            <!-- 2. Necklaces -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1599643478514-4a4e0f1523bb?q=80&w=800&auto=format&fit=crop" alt="Necklaces">
+                <div class="collection-overlay">
+                    <h3>Necklaces</h3>
+                    <p>Artisan Crafted Elegance</p>
+                </div>
+            </div>
 
-<section class="section contact" id="contact"><div class="container contact-grid"><div class="contact-copy"><div class="eyebrow">Contact Uverra Gems</div><h2>Let's discuss your jewellery requirement.</h2><p>For wholesale, custom sourcing, private label or catalogue enquiries, contact us directly.</p>
-<div class="info"><i class="fa-solid fa-location-dot"></i><div><strong>Location</strong><span>Moradabad, Uttar Pradesh, India</span></div></div>
-<div class="info"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp</strong><a href="https://wa.me/919528296731" target="_blank" rel="noopener">+91 9528296731</a></div></div>
-<div class="info"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><a href="mailto:uverragems@gmail.com">uverragems@gmail.com</a></div></div>
-<div class="info"><i class="fa-brands fa-instagram"></i><div><strong>Instagram</strong><a href="https://instagram.com/uverra_gems" target="_blank" rel="noopener">@uverra_gems</a></div></div>
-</div>
-<div class="form"><h3>Send a Buyer Inquiry</h3><form id="contactForm"><div class="formgrid"><input name="name" placeholder="Your name *" required><input name="company" placeholder="Company name"><input type="email" name="email" placeholder="Business email *" required><input name="country" placeholder="Country *" required><select name="product" required><option value="">Product interest *</option><option>925 Sterling Silver</option><option>18K Gold</option><option>22K Gold</option><option>Rings</option><option>Earrings</option><option>Necklaces / Pendants</option><option>Bracelets / Bangles</option><option>Custom / Private Label</option></select><input name="quantity" placeholder="Approx. quantity / MOQ"><textarea class="full" name="message" placeholder="Tell us about your requirement *" required></textarea><button class="btn btn-gold full">Send Inquiry</button></div></form><div class="note">The form opens a prepared email to uverragems@gmail.com. WhatsApp is also available for direct enquiries.</div></div>
-</div></section>
+            <!-- 3. Earrings -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop" alt="Earrings">
+                <div class="collection-overlay">
+                    <h3>Earrings</h3>
+                    <p>Contemporary & Traditional</p>
+                </div>
+            </div>
 
-<footer><div class="container"><div class="footgrid"><div><a class="logo" href="#home">Uverra <span>Gems</span></a><p>India-based B2B jewellery sourcing and export for international buyers.</p></div><div><h4>Catalogue</h4><a href="#catalogue">All Jewellery</a><a href="#catalogue">Silver</a><a href="#catalogue">Gold</a><a href="#catalogue">Rings · Earrings · Necklaces</a></div><div><h4>Contact</h4><a href="https://wa.me/919528296731" target="_blank" rel="noopener">+91 9528296731</a><a href="mailto:uverragems@gmail.com">uverragems@gmail.com</a><a href="https://instagram.com/uverra_gems" target="_blank" rel="noopener">@uverra_gems</a></div></div><div class="copy">© 2026 Uverra Gems. All rights reserved.</div></div></footer>
+            <!-- 4. Bracelets -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop" alt="Bracelets">
+                <div class="collection-overlay">
+                    <h3>Bracelets</h3>
+                    <p>Delicate & Statement Pieces</p>
+                </div>
+            </div>
 
-<a class="wa" href="https://wa.me/919528296731?text=Hello%20Uverra%20Gems%2C%20I%20am%20interested%20in%20your%20B2B%20jewellery%20catalogue." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <!-- 5. Pendants -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=800&auto=format&fit=crop" alt="Pendants">
+                <div class="collection-overlay">
+                    <h3>Pendants</h3>
+                    <p>Intricate Detailing</p>
+                </div>
+            </div>
 
-<div class="modal" id="modal"><div class="modalbox"><button type="button" class="close" id="close" aria-label="Close product details">&times;</button><div class="detail"><div><img id="detailImg" alt=""><div style="margin-top:10px"><a id="waProduct" class="btn btn-gold" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp</a></div></div><div><div class="eyebrow" id="detailCat"></div><h2 id="detailName"></h2><div class="code" id="detailCode"></div><p style="margin-top:12px">Reference from the Uverra Gems catalogue. Exact specifications, availability, pricing and MOQ are confirmed according to the buyer's requirement.</p><div class="detail-list"><div><strong>Category:</strong> <span id="detailCategory"></span></div><div><strong>Material:</strong> <span id="detailMaterial"></span></div><div><strong>MOQ:</strong> On enquiry</div><div><strong>Customization:</strong> Discuss with buyer</div></div><a href="#contact" class="btn btn-dark" id="modalContact">Send Buyer Inquiry</a></div></div></div></div>
-<div class="toast" id="toast">Your enquiry email has been prepared.</div>
+            <!-- 6. Bangles -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=800&auto=format&fit=crop" alt="Bangles">
+                <div class="collection-overlay">
+                    <h3>Bangles</h3>
+                    <p>Timeless Craftsmanship</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-const PRODUCTS = [{"id": "UG-001", "name": "Uverra Bracelets UG-001", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_001.jpg", "collection": "Silver"}, {"id": "UG-002", "name": "Uverra Rings UG-002", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_002.jpg", "collection": "Silver"}, {"id": "UG-003", "name": "Uverra Bracelets UG-003", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_003.jpg", "collection": "Silver"}, {"id": "UG-004", "name": "Uverra Rings UG-004", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_004.jpg", "collection": "Silver"}, {"id": "UG-005", "name": "Uverra Other UG-005", "category": "Other", "material": "925 Sterling Silver", "image": "assets/products/Silver/Other/silver_005.jpg", "collection": "Silver"}, {"id": "UG-006", "name": "Uverra Bangles UG-006", "category": "Bangles", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bangles/silver_006.jpg", "collection": "Silver"}, {"id": "UG-007", "name": "Uverra Earrings UG-007", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_007.jpg", "collection": "Silver"}, {"id": "UG-008", "name": "Uverra Earrings UG-008", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_008.jpg", "collection": "Silver"}, {"id": "UG-009", "name": "Uverra Bracelets UG-009", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_009.jpg", "collection": "Silver"}, {"id": "UG-010", "name": "Uverra Earrings UG-010", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_010.jpg", "collection": "Silver"}, {"id": "UG-011", "name": "Uverra Rings UG-011", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_011.jpg", "collection": "Silver"}, {"id": "UG-012", "name": "Uverra Rings UG-012", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_012.jpg", "collection": "Silver"}, {"id": "UG-013", "name": "Uverra Rings UG-013", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_013.jpg", "collection": "Silver"}, {"id": "UG-014", "name": "Uverra Earrings UG-014", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_014.jpg", "collection": "Silver"}, {"id": "UG-015", "name": "Uverra Bangles UG-015", "category": "Bangles", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bangles/silver_015.jpg", "collection": "Silver"}, {"id": "UG-016", "name": "Uverra Earrings UG-016", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_016.jpg", "collection": "Silver"}, {"id": "UG-017", "name": "Uverra Earrings UG-017", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_017.jpg", "collection": "Silver"}, {"id": "UG-018", "name": "Uverra Earrings UG-018", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_018.jpg", "collection": "Silver"}, {"id": "UG-019", "name": "Uverra Rings UG-019", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_019.jpg", "collection": "Silver"}, {"id": "UG-020", "name": "Uverra Bangles UG-020", "category": "Bangles", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bangles/silver_020.jpg", "collection": "Silver"}, {"id": "UG-021", "name": "Uverra Earrings UG-021", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_021.jpg", "collection": "Silver"}, {"id": "UG-022", "name": "Uverra Earrings UG-022", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_022.jpg", "collection": "Silver"}, {"id": "UG-023", "name": "Uverra Bracelets UG-023", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_023.jpg", "collection": "Silver"}, {"id": "UG-024", "name": "Uverra Rings UG-024", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_024.jpg", "collection": "Silver"}, {"id": "UG-025", "name": "Uverra Rings UG-025", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_025.jpg", "collection": "Silver"}, {"id": "UG-026", "name": "Uverra Rings UG-026", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_026.jpg", "collection": "Silver"}, {"id": "UG-027", "name": "Uverra Bracelets UG-027", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_027.jpg", "collection": "Silver"}, {"id": "UG-028", "name": "Uverra Rings UG-028", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_028.jpg", "collection": "Silver"}, {"id": "UG-029", "name": "Uverra Bracelets UG-029", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_029.jpg", "collection": "Silver"}, {"id": "UG-030", "name": "Uverra Bracelets UG-030", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_030.jpg", "collection": "Silver"}, {"id": "UG-031", "name": "Uverra Bracelets UG-031", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_031.jpg", "collection": "Silver"}, {"id": "UG-032", "name": "Uverra Bracelets UG-032", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_032.jpg", "collection": "Silver"}, {"id": "UG-033", "name": "Uverra Bracelets UG-033", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_033.jpg", "collection": "Silver"}, {"id": "UG-034", "name": "Uverra Bracelets UG-034", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_034.jpg", "collection": "Silver"}, {"id": "UG-035", "name": "Uverra Bracelets UG-035", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_035.jpg", "collection": "Silver"}, {"id": "UG-036", "name": "Uverra Rings UG-036", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_036.jpg", "collection": "Silver"}, {"id": "UG-037", "name": "Uverra Rings UG-037", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_037.jpg", "collection": "Silver"}, {"id": "UG-038", "name": "Uverra Rings UG-038", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_038.jpg", "collection": "Silver"}, {"id": "UG-039", "name": "Uverra Earrings UG-039", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_039.jpg", "collection": "Silver"}, {"id": "UG-040", "name": "Uverra Earrings UG-040", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_040.jpg", "collection": "Silver"}, {"id": "UG-041", "name": "Uverra Bracelets UG-041", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_041.jpg", "collection": "Silver"}, {"id": "UG-042", "name": "Uverra Earrings UG-042", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_042.jpg", "collection": "Silver"}, {"id": "UG-043", "name": "Uverra Earrings UG-043", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_043.jpg", "collection": "Silver"}, {"id": "UG-044", "name": "Uverra Earrings UG-044", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_044.jpg", "collection": "Silver"}, {"id": "UG-045", "name": "Uverra Earrings UG-045", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_045.jpg", "collection": "Silver"}, {"id": "UG-046", "name": "Uverra Earrings UG-046", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_046.jpg", "collection": "Silver"}, {"id": "UG-047", "name": "Uverra Earrings UG-047", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_047.jpg", "collection": "Silver"}, {"id": "UG-048", "name": "Uverra Earrings UG-048", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_048.jpg", "collection": "Silver"}, {"id": "UG-049", "name": "Uverra Rings UG-049", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_049.jpg", "collection": "Silver"}, {"id": "UG-050", "name": "Uverra Earrings UG-050", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_050.jpg", "collection": "Silver"}, {"id": "UG-051", "name": "Uverra Bracelets UG-051", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_051.jpg", "collection": "Silver"}, {"id": "UG-052", "name": "Uverra Bracelets UG-052", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_052.jpg", "collection": "Silver"}, {"id": "UG-053", "name": "Uverra Earrings UG-053", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_053.jpg", "collection": "Silver"}, {"id": "UG-054", "name": "Uverra Earrings UG-054", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_054.jpg", "collection": "Silver"}, {"id": "UG-055", "name": "Uverra Bangles UG-055", "category": "Bangles", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bangles/silver_055.jpg", "collection": "Silver"}, {"id": "UG-056", "name": "Uverra Earrings UG-056", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_056.jpg", "collection": "Silver"}, {"id": "UG-057", "name": "Uverra Rings UG-057", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_057.jpg", "collection": "Silver"}, {"id": "UG-058", "name": "Uverra Bracelets UG-058", "category": "Bracelets", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bracelets/silver_058.jpg", "collection": "Silver"}, {"id": "UG-059", "name": "Uverra Earrings UG-059", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_059.jpg", "collection": "Silver"}, {"id": "UG-060", "name": "Uverra Bangles UG-060", "category": "Bangles", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bangles/silver_060.jpg", "collection": "Silver"}, {"id": "UG-061", "name": "Uverra Earrings UG-061", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_061.jpg", "collection": "Silver"}, {"id": "UG-062", "name": "Uverra Bangles UG-062", "category": "Bangles", "material": "925 Sterling Silver", "image": "assets/products/Silver/Bangles/silver_062.jpg", "collection": "Silver"}, {"id": "UG-063", "name": "Uverra Rings UG-063", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_063.jpg", "collection": "Silver"}, {"id": "UG-064", "name": "Uverra Earrings UG-064", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_064.jpg", "collection": "Silver"}, {"id": "UG-065", "name": "Uverra Rings UG-065", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_065.jpg", "collection": "Silver"}, {"id": "UG-066", "name": "Uverra Rings UG-066", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_066.jpg", "collection": "Silver"}, {"id": "UG-067", "name": "Uverra Rings UG-067", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_067.jpg", "collection": "Silver"}, {"id": "UG-068", "name": "Uverra Rings UG-068", "category": "Rings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Rings/silver_068.jpg", "collection": "Silver"}, {"id": "UG-069", "name": "Uverra Earrings UG-069", "category": "Earrings", "material": "925 Sterling Silver", "image": "assets/products/Silver/Earrings/silver_069.jpg", "collection": "Silver"}, {"id": "UG-070", "name": "Uverra Earrings UG-070", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_070.jpg", "collection": "Gold"}, {"id": "UG-071", "name": "Uverra Earrings UG-071", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_071.jpg", "collection": "Gold"}, {"id": "UG-072", "name": "Uverra Rings UG-072", "category": "Rings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Rings/gold_072.jpg", "collection": "Gold"}, {"id": "UG-073", "name": "Uverra Necklaces UG-073", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_073.jpg", "collection": "Gold"}, {"id": "UG-074", "name": "Uverra Earrings UG-074", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_074.jpg", "collection": "Gold"}, {"id": "UG-075", "name": "Uverra Earrings UG-075", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_075.jpg", "collection": "Gold"}, {"id": "UG-076", "name": "Uverra Necklaces UG-076", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_076.jpg", "collection": "Gold"}, {"id": "UG-077", "name": "Uverra Necklaces UG-077", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_077.jpg", "collection": "Gold"}, {"id": "UG-078", "name": "Uverra Necklaces UG-078", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_078.jpg", "collection": "Gold"}, {"id": "UG-079", "name": "Uverra Necklaces UG-079", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_079.jpg", "collection": "Gold"}, {"id": "UG-080", "name": "Uverra Bracelets UG-080", "category": "Bracelets", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Bracelets/gold_080.jpg", "collection": "Gold"}, {"id": "UG-081", "name": "Uverra Earrings UG-081", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_081.jpg", "collection": "Gold"}, {"id": "UG-082", "name": "Uverra Necklaces UG-082", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_082.jpg", "collection": "Gold"}, {"id": "UG-083", "name": "Uverra Earrings UG-083", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_083.jpg", "collection": "Gold"}, {"id": "UG-084", "name": "Uverra Necklaces UG-084", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_084.jpg", "collection": "Gold"}, {"id": "UG-085", "name": "Uverra Rings UG-085", "category": "Rings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Rings/gold_085.jpg", "collection": "Gold"}, {"id": "UG-086", "name": "Uverra Rings UG-086", "category": "Rings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Rings/gold_086.jpg", "collection": "Gold"}, {"id": "UG-087", "name": "Uverra Necklaces UG-087", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_087.jpg", "collection": "Gold"}, {"id": "UG-088", "name": "Uverra Necklaces UG-088", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_088.jpg", "collection": "Gold"}, {"id": "UG-089", "name": "Uverra Necklaces UG-089", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_089.jpg", "collection": "Gold"}, {"id": "UG-090", "name": "Uverra Earrings UG-090", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_090.jpg", "collection": "Gold"}, {"id": "UG-091", "name": "Uverra Necklaces UG-091", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_091.jpg", "collection": "Gold"}, {"id": "UG-092", "name": "Uverra Earrings UG-092", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_092.jpg", "collection": "Gold"}, {"id": "UG-093", "name": "Uverra Earrings UG-093", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_093.jpg", "collection": "Gold"}, {"id": "UG-094", "name": "Uverra Earrings UG-094", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_094.jpg", "collection": "Gold"}, {"id": "UG-095", "name": "Uverra Necklaces UG-095", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_095.jpg", "collection": "Gold"}, {"id": "UG-096", "name": "Uverra Rings UG-096", "category": "Rings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Rings/gold_096.jpg", "collection": "Gold"}, {"id": "UG-097", "name": "Uverra Earrings UG-097", "category": "Earrings", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Earrings/gold_097.jpg", "collection": "Gold"}, {"id": "UG-098", "name": "Uverra Necklaces UG-098", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_098.jpg", "collection": "Gold"}, {"id": "UG-099", "name": "Uverra Necklaces UG-099", "category": "Necklaces", "material": "Gold Jewellery — karat on enquiry", "image": "assets/products/Gold/Necklaces/gold_099.jpg", "collection": "Gold"}, {"id": "UG-100", "name": "Uverra Earrings UG-100", "category": "Earrings", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Earrings/necklaces_100.jpg", "collection": "Gold"}, {"id": "UG-101", "name": "Uverra Earrings UG-101", "category": "Earrings", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Earrings/necklaces_101.jpg", "collection": "Gold"}, {"id": "UG-102", "name": "Uverra Earrings UG-102", "category": "Earrings", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Earrings/necklaces_102.jpg", "collection": "Gold"}, {"id": "UG-103", "name": "Uverra Necklaces UG-103", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_103.jpg", "collection": "Silver"}, {"id": "UG-104", "name": "Uverra Pendants UG-104", "category": "Pendants", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Pendants/necklaces_104.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-105", "name": "Uverra Pendants UG-105", "category": "Pendants", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Pendants/necklaces_105.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-106", "name": "Uverra Bangles UG-106", "category": "Bangles", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Bangles/necklaces_106.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-107", "name": "Uverra Necklaces UG-107", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_107.jpg", "collection": "Silver"}, {"id": "UG-108", "name": "Uverra Bracelets UG-108", "category": "Bracelets", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Bracelets/necklaces_108.jpg", "collection": "Silver"}, {"id": "UG-109", "name": "Uverra Necklaces UG-109", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_109.jpg", "collection": "Silver"}, {"id": "UG-110", "name": "Uverra Pendants UG-110", "category": "Pendants", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Pendants/necklaces_110.jpg", "collection": "Gold"}, {"id": "UG-111", "name": "Uverra Pendants UG-111", "category": "Pendants", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Pendants/necklaces_111.jpg", "collection": "Silver"}, {"id": "UG-112", "name": "Uverra Necklaces UG-112", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_112.jpg", "collection": "Silver"}, {"id": "UG-113", "name": "Uverra Necklaces UG-113", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_113.jpg", "collection": "Silver"}, {"id": "UG-114", "name": "Uverra Necklaces UG-114", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_114.jpg", "collection": "Silver"}, {"id": "UG-115", "name": "Uverra Necklaces UG-115", "category": "Necklaces", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Necklaces/necklaces_115.jpg", "collection": "Gold"}, {"id": "UG-116", "name": "Uverra Necklaces UG-116", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_116.jpg", "collection": "Silver"}, {"id": "UG-117", "name": "Uverra Necklaces UG-117", "category": "Necklaces", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Necklaces/necklaces_117.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-118", "name": "Uverra Pendants UG-118", "category": "Pendants", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Pendants/necklaces_118.jpg", "collection": "Silver"}, {"id": "UG-119", "name": "Uverra Pendants UG-119", "category": "Pendants", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Pendants/necklaces_119.jpg", "collection": "Silver"}, {"id": "UG-120", "name": "Uverra Earrings UG-120", "category": "Earrings", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Earrings/necklaces_120.jpg", "collection": "Gold"}, {"id": "UG-121", "name": "Uverra Pendants UG-121", "category": "Pendants", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Pendants/necklaces_121.jpg", "collection": "Silver"}, {"id": "UG-122", "name": "Uverra Necklaces UG-122", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_122.jpg", "collection": "Silver"}, {"id": "UG-123", "name": "Uverra Necklaces UG-123", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_123.jpg", "collection": "Silver"}, {"id": "UG-124", "name": "Uverra Necklaces UG-124", "category": "Necklaces", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Necklaces/necklaces_124.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-125", "name": "Uverra Earrings UG-125", "category": "Earrings", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Earrings/necklaces_125.jpg", "collection": "Silver"}, {"id": "UG-126", "name": "Uverra Necklaces UG-126", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_126.jpg", "collection": "Silver"}, {"id": "UG-127", "name": "Uverra Necklaces UG-127", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_127.jpg", "collection": "Silver"}, {"id": "UG-128", "name": "Uverra Necklaces UG-128", "category": "Necklaces", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Necklaces/necklaces_128.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-129", "name": "Uverra Necklaces UG-129", "category": "Necklaces", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Necklaces/necklaces_129.jpg", "collection": "Gold"}, {"id": "UG-130", "name": "Uverra Bracelets UG-130", "category": "Bracelets", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Bracelets/necklaces_130.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-131", "name": "Uverra Bracelets UG-131", "category": "Bracelets", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Bracelets/necklaces_131.jpg", "collection": "Silver"}, {"id": "UG-132", "name": "Uverra Pendants UG-132", "category": "Pendants", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Pendants/necklaces_132.jpg", "collection": "Silver"}, {"id": "UG-133", "name": "Uverra Pendants UG-133", "category": "Pendants", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Pendants/necklaces_133.jpg", "collection": "Silver"}, {"id": "UG-134", "name": "Uverra Necklaces UG-134", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_134.jpg", "collection": "Silver"}, {"id": "UG-135", "name": "Uverra Sets UG-135", "category": "Sets", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Sets/necklaces_135.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-136", "name": "Uverra Sets UG-136", "category": "Sets", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Sets/necklaces_136.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-137", "name": "Uverra Necklaces UG-137", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_137.jpg", "collection": "Silver"}, {"id": "UG-138", "name": "Uverra Necklaces UG-138", "category": "Necklaces", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Necklaces/necklaces_138.jpg", "collection": "Silver"}, {"id": "UG-139", "name": "Uverra Pendants UG-139", "category": "Pendants", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Pendants/necklaces_139.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-140", "name": "Uverra Pendants UG-140", "category": "Pendants", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Pendants/necklaces_140.jpg", "collection": "Gold"}, {"id": "UG-141", "name": "Uverra Pendants UG-141", "category": "Pendants", "material": "Silver reference — final material on enquiry", "image": "assets/products/Silver/Pendants/necklaces_141.jpg", "collection": "Silver"}, {"id": "UG-142", "name": "Uverra Necklaces UG-142", "category": "Necklaces", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Necklaces/necklaces_142.jpg", "collection": "Mixed / Fashion"}, {"id": "UG-143", "name": "Uverra Earrings UG-143", "category": "Earrings", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Earrings/necklaces_143.jpg", "collection": "Gold"}, {"id": "UG-144", "name": "Uverra Pendants UG-144", "category": "Pendants", "material": "Gold reference — final material on enquiry", "image": "assets/products/Gold/Pendants/necklaces_144.jpg", "collection": "Gold"}, {"id": "UG-145", "name": "Uverra Necklaces UG-145", "category": "Necklaces", "material": "Mixed / Fashion reference — final material on enquiry", "image": "assets/products/Mixed-Fashion/Necklaces/necklaces_145.jpg", "collection": "Mixed / Fashion"}];
-const TREND_IDS = ["UG-013", "UG-014", "UG-020", "UG-024", "UG-040", "UG-060", "UG-070", "UG-090", "UG-110", "UG-125", "UG-135", "UG-145"];
-const UPCOMING_IDS = ["UG-004", "UG-019", "UG-026", "UG-038", "UG-049", "UG-065", "UG-076", "UG-087", "UG-095", "UG-108", "UG-118", "UG-133"];
-const EMAIL = "uverragems@gmail.com";
-const WA = "919528296731";
-let currentMaterial = "All";
-let currentCategory = "All";
-let query = "";
+    <!-- Professional Contact Section -->
+    <section id="contact" class="contact-wrapper">
+        <div class="contact-text">
+            <h2>Partner With Us</h2>
+            <p>Whether you are looking to source high-quality jewelry for your boutique or need a reliable manufacturing partner for custom designs, we are here to deliver excellence across the globe.</p>
+            
+            <div style="margin-top: 30px;">
+                <p><i class="fa-solid fa-location-dot" style="color: var(--gold-accent); margin-right: 10px;"></i> Moradabad, Uttar Pradesh, India</p>
+                <p style="margin-top: 10px;"><i class="fa-brands fa-instagram" style="color: var(--gold-accent); margin-right: 10px;"></i> <a href="https://instagram.com/uverra_gems" target="_blank">@uverra_gems</a></p>
+            </div>
+        </div>
 
-const grid = document.getElementById("grid");
-const empty = document.getElementById("empty");
-const materialFilters = document.getElementById("materialFilters");
-const categoryFilters = document.getElementById("categoryFilters");
-const categoryOrder = ["Rings","Earrings","Necklaces","Pendants","Bracelets","Bangles","Sets","Other"];
+        <div class="team-grid">
+            <div class="team-member">
+                <h4>Uday Verma</h4>
+                <span>Founder</span>
+                <div class="contact-links">
+                    <a href="https://wa.me/919456095758" target="_blank"><i class="fa-brands fa-whatsapp"></i> +91 9456095758</a>
+                    <a href="mailto:uverragems@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
+                </div>
+            </div>
 
-function findProduct(id) {
-  return PRODUCTS.find(x => String(x.id) === String(id));
-}
+            <div class="team-member">
+                <h4>Megha Verma</h4>
+                <span>Senior Merchandiser</span>
+                <div class="contact-links">
+                    <a href="https://wa.me/919528296731" target="_blank"><i class="fa-brands fa-whatsapp"></i> +91 9528296731</a>
+                    <a href="mailto:uverragems@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-function availableCategories(){
-  const source = PRODUCTS.filter(p => currentMaterial === "All" || p.collection === currentMaterial);
-  return categoryOrder.filter(c => source.some(p => p.category === c));
-}
+    <footer>
+        <p>&copy; 2026 Uverra Gems. Setting the global standard for fine jewelry manufacturing.</p>
+    </footer>
 
-function buildCategoryFilters(){
-  categoryFilters.innerHTML =
-    `<button class="filter ${currentCategory==="All"?"active":""}" data-category="All">All</button>` +
-    availableCategories().map(c => `<button class="filter ${currentCategory===c?"active":""}" data-category="${c}">${c}</button>`).join("");
-  categoryFilters.querySelectorAll(".filter").forEach(b => b.addEventListener("click", () => {
-    currentCategory = b.dataset.category;
-    buildCategoryFilters();
-    render();
-  }));
-}
+    <script>
+        (function () {
+            const toggle = document.getElementById("menuToggle");
+            const nav = document.getElementById("mobileNav");
+            if (!toggle || !nav) return;
 
-function card(p){
-  return `<article class="card" data-id="${p.id}">
-    <div class="card-img"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="tag">${p.collection} · ${p.category}</span></div>
-    <div class="card-body"><h3>${p.name}</h3><div class="meta">${p.id} · ${p.material}</div>
-    <div class="card-actions"><button type="button" class="smallbtn" onclick="openProduct('${p.id}')">View Details</button><button type="button" class="smallbtn dark" onclick="waProduct('${p.id}')">WhatsApp</button></div></div>
-  </article>`;
-}
+            function closeMenu() {
+                nav.classList.remove("open");
+                toggle.setAttribute("aria-expanded", "false");
+                toggle.setAttribute("aria-label", "Open navigation menu");
+                toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
 
-function miniCard(p){
-  return `<article class="trend-card">
-    <img src="${p.image}" alt="${p.name}" loading="lazy">
-    <div class="trend-body"><h3>${p.name}</h3><div class="meta">${p.collection} · ${p.category} · ${p.id}</div>
-    <button type="button" class="smallbtn" onclick="openProduct('${p.id}')">View Details</button></div>
-  </article>`;
-}
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                const open = nav.classList.toggle("open");
+                toggle.setAttribute("aria-expanded", String(open));
+                toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+                toggle.innerHTML = open
+                    ? '<i class="fa-solid fa-xmark"></i>'
+                    : '<i class="fa-solid fa-bars"></i>';
+            });
 
-function render(){
-  const list = PRODUCTS.filter(p =>
-    (currentMaterial==="All" || p.collection===currentMaterial) &&
-    (currentCategory==="All" || p.category===currentCategory) &&
-    (`${p.id} ${p.name} ${p.collection} ${p.category} ${p.material}`.toLowerCase().includes(query.toLowerCase()))
-  );
-  grid.innerHTML = list.map(card).join("");
-  empty.style.display = list.length ? "none" : "block";
-}
+            nav.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", closeMenu);
+            });
 
-function renderSpecialSections(){
-  const selected = TREND_IDS.map(findProduct).filter(Boolean);
-  const upcoming = UPCOMING_IDS.map(findProduct).filter(Boolean);
-  const tg = document.getElementById("trendGrid");
-  const ug = document.getElementById("upcomingGrid");
-  if(tg) tg.innerHTML = selected.map(miniCard).join("");
-  if(ug) ug.innerHTML = upcoming.map(miniCard).join("");
-}
+            document.addEventListener("click", function (e) {
+                if (!nav.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+            });
 
-function waProduct(id){
-  const p=findProduct(id);
-  if(!p) return;
-  const text=`Hello Uverra Gems, I am interested in product ${p.id} (${p.collection} / ${p.category}). Please share price, MOQ and available specifications.`;
-  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(text)}`,"_blank");
-}
-
-function openProduct(id){
-  const p=findProduct(id);
-  if(!p) return;
-  const img=document.getElementById("detailImg");
-  img.src=p.image;
-  img.alt=p.name;
-  img.dataset.productId=p.id;
-  document.getElementById("detailCat").textContent=`${p.collection} · ${p.category}`;
-  document.getElementById("detailName").textContent=p.name;
-  document.getElementById("detailCode").textContent=p.id;
-  document.getElementById("detailCategory").textContent=`${p.collection} / ${p.category}`;
-  document.getElementById("detailMaterial").textContent=p.material;
-  document.getElementById("waProduct").href=`https://wa.me/${WA}?text=${encodeURIComponent("Hello Uverra Gems, I am interested in "+p.id+" ("+p.collection+" / "+p.category+"). Please share price, MOQ and available specifications.")}`;
-  document.getElementById("modal").classList.add("open");
-  document.body.classList.add("lock");
-}
-
-materialFilters.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
-  materialFilters.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
-  b.classList.add("active");
-  currentMaterial=b.dataset.material;
-  currentCategory="All";
-  buildCategoryFilters();
-  render();
-}));
-
-document.getElementById("search").addEventListener("input",e=>{
-  query=e.target.value;
-  render();
-});
-
-buildCategoryFilters();
-render();
-renderSpecialSections();
-
-document.getElementById("contactForm").addEventListener("submit",e=>{
-  e.preventDefault(); const d=new FormData(e.target);
-  const body=`Hello Uverra Gems,
-
-I am interested in your B2B jewellery supply.
-
-Name: ${d.get("name")}
-Company: ${d.get("company")}
-Email: ${d.get("email")}
-Country: ${d.get("country")}
-Product interest: ${d.get("product")}
-Approx. quantity / MOQ: ${d.get("quantity")}
-
-Requirement:
-${d.get("message")}
-
-Regards,
-${d.get("name")}`;
-  window.location.href=`mailto:${EMAIL}?subject=${encodeURIComponent("Buyer Inquiry — Uverra Gems")}&body=${encodeURIComponent(body)}`;
-  const t=document.getElementById("toast");t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3500);
-});
-document.getElementById("modalContact").addEventListener("click",()=>{document.getElementById("modal").classList.remove("open");document.body.classList.remove("lock")});
-const productModal=document.getElementById("modal");
-const productClose=document.getElementById("close");
-function closeProductModal(){ if(productModal){ productModal.classList.remove("open"); document.body.classList.remove("lock"); } }
-if(productClose) productClose.addEventListener("click", closeProductModal);
-if(productModal) productModal.addEventListener("click", function(e){ if(e.target===productModal) closeProductModal(); });
-document.addEventListener("keydown", function(e){ if(e.key==="Escape" && productModal && productModal.classList.contains("open")) closeProductModal(); });
-render();
-</script>
+            window.addEventListener("resize", function () {
+                if (window.innerWidth > 768) closeMenu();
+            });
+        })();
+    </script>
 </body>
 </html>
