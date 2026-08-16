@@ -243,6 +243,21 @@ buildCategoryFilters();
 render();
 renderSpecialSections();
 
+const mobileMenu=document.getElementById("menu");
+const mobileLinks=document.getElementById("links");
+if(mobileMenu && mobileLinks){
+  mobileMenu.addEventListener("click", e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    mobileLinks.classList.toggle("open");
+    mobileMenu.setAttribute("aria-expanded", mobileLinks.classList.contains("open") ? "true" : "false");
+  });
+  mobileLinks.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>mobileLinks.classList.remove("open")));
+  document.addEventListener("click", e=>{
+    if(!mobileLinks.contains(e.target) && !mobileMenu.contains(e.target)) mobileLinks.classList.remove("open");
+  });
+}
+
 document.getElementById("contactForm").addEventListener("submit",e=>{
   e.preventDefault(); const d=new FormData(e.target);
   const body=`Hello Uverra Gems,
